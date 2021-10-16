@@ -2,9 +2,13 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/about" exact-active-class="ttt">About</router-link> |
+      <router-link to="/book">BookList</router-link> |
+      <router-link to="/user/profile">User</router-link>
     </div>
-    <router-view />
+    <div class="border-b">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -27,6 +31,14 @@
     &.router-link-exact-active {
       color: #42b983;
     }
+
+    &.router-link-active.ttt {
+      color: #0000ff;
+    }
   }
+}
+
+.border-b {
+  border: 1px blue solid;
 }
 </style>
